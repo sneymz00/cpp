@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.hpp                                          :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: camurill <camurill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/30 19:38:56 by camurill          #+#    #+#             */
-/*   Updated: 2025/07/08 15:01:38 by camurill         ###   ########.fr       */
+/*   Created: 2025/07/08 16:42:02 by camurill          #+#    #+#             */
+/*   Updated: 2025/07/08 17:01:00 by camurill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef UTILS_HPP
-# define UTILS_HPP
+#include "Zombie.hpp"
 
-# include "contact.hpp"
+Zombie::Zombie()
+{
+}
 
-std::string add_spaces(int n);
+Zombie::~Zombie()
+{
+	std::cout << "Zombie object " << this->_name << " eliminated" << std::endl;
+}
 
-std::string ft_width(std::string str, long unsigned max);
+void Zombie::announce()
+{
+	std::cout << this->_name << " BraiiiiiiinnnzzzZ..." << std::endl;
+}
 
-int	search(Contact contacts[8]);
-
-int	check_number(std::string str);
-
-int check_valid(std::string str);
-
-#endif
+void Zombie::setName(std::string name)
+{
+	this->_name = name;
+}

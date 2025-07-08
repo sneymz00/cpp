@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.hpp                                          :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: camurill <camurill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/30 19:38:56 by camurill          #+#    #+#             */
-/*   Updated: 2025/07/08 15:01:38 by camurill         ###   ########.fr       */
+/*   Created: 2025/07/08 20:46:52 by camurill          #+#    #+#             */
+/*   Updated: 2025/07/08 20:53:00 by camurill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef UTILS_HPP
-# define UTILS_HPP
+#ifndef FIXED_HPP
+# define FIXED_HPP
 
-# include "contact.hpp"
+# include <iostream>
 
-std::string add_spaces(int n);
-
-std::string ft_width(std::string str, long unsigned max);
-
-int	search(Contact contacts[8]);
-
-int	check_number(std::string str);
-
-int check_valid(std::string str);
+class Fixed
+{
+	private:
+			int					_value;
+			static const int	_frac;
+	public:
+			Fixed();
+			~Fixed();
+			int getRawBits(void) const;
+			void setRwaBits(int const raw);
+};
 
 #endif

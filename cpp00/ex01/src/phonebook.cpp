@@ -6,7 +6,7 @@
 /*   By: camurill <camurill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 18:05:21 by camurill          #+#    #+#             */
-/*   Updated: 2025/06/30 21:22:02 by camurill         ###   ########.fr       */
+/*   Updated: 2025/07/08 15:04:55 by camurill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,21 +35,45 @@ void	Phonebook::add_contact(void)
 	{
 		std::cout << "Enter a first name: ";
 		if (std::getline(std::cin, str) && str != "")
-			this->contacts[this->index % 8].set_FirstName(str);
+		{
+			if (check_valid(str) == 0)
+			{
+				std::cout << "Invalid format, not admit tabs" << std::endl;
+				str = "";
+			}
+			else
+				this->contacts[this->index % 8].set_FirstName(str);
+		}		
 	}
 	str = "";
 	while (!std::cin.eof() && str == "")
 	{
 		std::cout << "Enter a last name: ";
 		if (std::getline(std::cin, str) && str != "")
-			this->contacts[this->index % 8].set_LastName(str);
+		{
+			if (check_valid(str) == 0)
+			{
+				std::cout << "Invalid format, not admit tabs" << std::endl;
+				str = "";
+			}
+			else
+				this->contacts[this->index % 8].set_LastName(str);
+		}
 	}
 	str = "";
 	while (!std::cin.eof() && str == "")
 	{
 		std::cout << "Enter a nickname: ";
 		if (std::getline(std::cin, str) && str != "")
-			this->contacts[this->index % 8].set_Nick(str);
+		{
+			if (check_valid(str) == 0)
+			{
+				std::cout << "Invalid format, not admit tabs" << std::endl;
+				str = "";
+			}
+			else
+				this->contacts[this->index % 8].set_Nick(str);
+		}
 	}
 	str = "";
 	while (!std::cin.eof() && str == "")
@@ -57,8 +81,6 @@ void	Phonebook::add_contact(void)
 		std::cout << "Enter a number phone: ";
 		if (std::getline(std::cin, str) && str != "")
 		{
-			//std::cout << "check number" << check_number(str) << std::endl;
-			std::cout << "check str" << str << std::endl;
 			if (check_number(str) == 0)
 			{
 				std::cout << "Pls, only numbers" << std::endl;

@@ -5,22 +5,26 @@
 #                                                     +:+ +:+         +:+      #
 #    By: camurill <camurill@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/04/25 15:43:36 by camurill          #+#    #+#              #
-#    Updated: 2025/07/08 15:42:57 by camurill         ###   ########.fr        #
+#    Created: 2025/07/08 20:45:14 by camurill          #+#    #+#              #
+#    Updated: 2025/07/08 20:45:15 by camurill         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = megaphone
+NAME = Harl_2
 
 CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
 
-SRCS = megaphone.cpp
+SRCS =	main.cpp\
+		Harl.cpp\
+
+INCS =	Harl.hpp
+
 OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJS) Makefile
+$(NAME): $(OBJS) Makefile $(INCS)
 	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJS)
 
 clean:

@@ -6,7 +6,7 @@
 /*   By: camurill <camurill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 17:51:06 by camurill          #+#    #+#             */
-/*   Updated: 2025/06/30 19:18:43 by camurill         ###   ########.fr       */
+/*   Updated: 2025/07/08 17:30:50 by camurill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,11 @@ int main(int ac, char **ag)
 		while (1)
 		{
 			std::cout << "Enter commmand (ADD, SEARCH, EXIT)" << std::endl;
-			std::getline(std::cin, command);
+			if (!std::getline(std::cin, command) || std::cin.eof())
+			{
+				std::cout << "\nInput stream closed (EOF received). Exiting...\n";
+       			break;
+			}
 			if (command == "ADD")
 				phonebook.add_contact();
 			else if (command == "EXIT")

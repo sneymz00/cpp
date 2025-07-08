@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.hpp                                          :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: camurill <camurill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/30 19:38:56 by camurill          #+#    #+#             */
-/*   Updated: 2025/07/08 15:01:38 by camurill         ###   ########.fr       */
+/*   Created: 2025/07/08 16:40:39 by camurill          #+#    #+#             */
+/*   Updated: 2025/07/08 17:01:18 by camurill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef UTILS_HPP
-# define UTILS_HPP
+#include "Zombie.hpp"
 
-# include "contact.hpp"
+Zombie* zombieHorde(int N, std::string name);
 
-std::string add_spaces(int n);
+int main()
+{
+	int size = 5;
 
-std::string ft_width(std::string str, long unsigned max);
-
-int	search(Contact contacts[8]);
-
-int	check_number(std::string str);
-
-int check_valid(std::string str);
-
-#endif
+	Zombie *horde = zombieHorde(size, "Tom");
+	for (int i = 0; i < size; i++)
+		horde[i].announce();
+	delete [] horde;
+	return (0);
+}

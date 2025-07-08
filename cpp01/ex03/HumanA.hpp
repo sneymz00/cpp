@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.hpp                                          :+:      :+:    :+:   */
+/*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: camurill <camurill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/30 19:38:56 by camurill          #+#    #+#             */
-/*   Updated: 2025/07/08 15:01:38 by camurill         ###   ########.fr       */
+/*   Created: 2025/07/08 18:00:05 by camurill          #+#    #+#             */
+/*   Updated: 2025/07/08 18:30:33 by camurill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef UTILS_HPP
-# define UTILS_HPP
+#ifndef HUMANA_CPP
+# define HUMANA_CPP
 
-# include "contact.hpp"
-
-std::string add_spaces(int n);
-
-std::string ft_width(std::string str, long unsigned max);
-
-int	search(Contact contacts[8]);
-
-int	check_number(std::string str);
-
-int check_valid(std::string str);
+# include <iostream>
+# include "Weapon.hpp"
+ 
+class HumanA
+{
+	private:
+		std::string	_name;
+		Weapon		&_weapon;
+	public:
+		HumanA(std::string name, Weapon &weapon);
+		~HumanA();
+		void attack();
+};
 
 #endif

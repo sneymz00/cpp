@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.hpp                                          :+:      :+:    :+:   */
+/*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: camurill <camurill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/30 19:38:56 by camurill          #+#    #+#             */
-/*   Updated: 2025/07/08 15:01:38 by camurill         ###   ########.fr       */
+/*   Created: 2025/07/08 17:40:57 by camurill          #+#    #+#             */
+/*   Updated: 2025/07/08 18:50:49 by camurill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef UTILS_HPP
-# define UTILS_HPP
+#include "Weapon.hpp"
 
-# include "contact.hpp"
+Weapon::Weapon(std::string name)
+{
+	this->type = name;
+}
 
-std::string add_spaces(int n);
+Weapon::~Weapon()
+{
 
-std::string ft_width(std::string str, long unsigned max);
+}
 
-int	search(Contact contacts[8]);
+const std::string& Weapon::getType()
+{
+	return (this->type);
+}
 
-int	check_number(std::string str);
-
-int check_valid(std::string str);
-
-#endif
+void Weapon::setType(std::string type)
+{
+	this->type = type;
+}

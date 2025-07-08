@@ -6,7 +6,7 @@
 /*   By: camurill <camurill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 19:35:42 by camurill          #+#    #+#             */
-/*   Updated: 2025/06/30 21:12:42 by camurill         ###   ########.fr       */
+/*   Updated: 2025/07/08 15:00:26 by camurill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,18 @@ int	check_number(std::string str)
 	while (str[i])
 	{
 		if (str[i] < 48 || str[i] > 57)
+			return (0);
+		i++;
+	}
+	return (1);
+}
+
+int check_valid(std::string str)
+{
+	int i = 0;
+	while (str[i])
+	{
+		if (str[i] == '\t')
 			return (0);
 		i++;
 	}
