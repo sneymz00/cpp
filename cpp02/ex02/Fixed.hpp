@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: nikitadorofeychik <nikitadorofeychik@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/08 20:46:52 by camurill          #+#    #+#             */
-/*   Updated: 2025/07/09 12:58:20 by nikitadorof      ###   ########.fr       */
+/*   Created: 2025/07/09 12:55:59 by nikitadorof       #+#    #+#             */
+/*   Updated: 2025/07/09 12:58:32 by nikitadorof      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,20 @@ class Fixed
 			int					_value;
 			static const int	_frac;
 	public:
-			Fixed();
+			Fixed(void);
+			Fixed(const int value);
+			Fixed(const float value);
 			~Fixed();
+			float toFloat(void) const;
+			int   toInt(void) const;
 			Fixed(Fixed const &copy)
 			Fixed &operator=(Fixed const &copy)
 			int getRawBits(void) const;
 			void setRwaBits(int const raw);
 };
+
+std::ostream	&operator<<(std::ostream &str, Fixed const &nbr)
+float			ft_pow(float base, int nbr);
+
 
 #endif
