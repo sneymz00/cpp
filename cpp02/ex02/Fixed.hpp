@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nikitadorofeychik <nikitadorofeychik@st    +#+  +:+       +#+        */
+/*   By: camurill <camurill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/09 12:55:59 by nikitadorof       #+#    #+#             */
-/*   Updated: 2025/07/09 12:58:32 by nikitadorof      ###   ########.fr       */
+/*   Created: 2025/07/12 18:40:49 by camurill          #+#    #+#             */
+/*   Updated: 2025/07/12 18:40:51 by camurill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define FIXED_HPP
 
 # include <iostream>
+# include <cmath>
 
 class Fixed
 {
@@ -27,14 +28,35 @@ class Fixed
 			~Fixed();
 			float toFloat(void) const;
 			int   toInt(void) const;
-			Fixed(Fixed const &copy)
-			Fixed &operator=(Fixed const &copy)
+			Fixed(Fixed const &copy);
+			Fixed &operator=(Fixed const &copy);
 			int getRawBits(void) const;
 			void setRwaBits(int const raw);
+			//operators >=<!
+			bool	operator>(Fixed fixed) const;
+			bool	operator<(Fixed fixed) const;
+			bool	operator<=(Fixed fixed) const;
+			bool	operator>=(Fixed fixed) const;
+			bool	operator==(Fixed fixed) const;
+			bool	operator!=(Fixed fixed) const;
+			//operator +-*/
+			float	operator+(Fixed fixed) const;
+			float	operator-(Fixed fixed) const;
+			float	operator*(Fixed fixed) const;
+			float	operator/(Fixed fixed) const;
+			//ppre-increment
+			Fixed	operator++();
+			Fixed	operator--();
+			//post increment
+			Fixed	operator++(int);
+			Fixed	operator--(int);
+			//Funtions
+			static Fixed	&min(Fixed &f, Fixed &s);
+			static const Fixed	&min(const Fixed &f, const Fixed &s);
+			static Fixed	&max(Fixed &f, Fixed &s);
+			static const Fixed	&max(const Fixed &f, const Fixed &s);
 };
 
-std::ostream	&operator<<(std::ostream &str, Fixed const &nbr)
-float			ft_pow(float base, int nbr);
-
+std::ostream	&operator<<(std::ostream &str, Fixed const &nbr);
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nikitadorofeychik <nikitadorofeychik@st    +#+  +:+       +#+        */
+/*   By: camurill <camurill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/09 12:56:15 by nikitadorof       #+#    #+#             */
-/*   Updated: 2025/07/09 12:57:55 by nikitadorof      ###   ########.fr       */
+/*   Created: 2025/07/12 18:40:55 by camurill          #+#    #+#             */
+/*   Updated: 2025/07/12 18:40:57 by camurill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

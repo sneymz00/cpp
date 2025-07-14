@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nikitadorofeychik <nikitadorofeychik@st    +#+  +:+       +#+        */
+/*   By: camurill <camurill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/09 12:25:37 by nikitadorof       #+#    #+#             */
-/*   Updated: 2025/07/09 12:58:34 by nikitadorof      ###   ########.fr       */
+/*   Created: 2025/07/12 18:40:10 by camurill          #+#    #+#             */
+/*   Updated: 2025/07/12 18:40:13 by camurill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,13 @@ class Fixed
 			~Fixed();
 			float toFloat(void) const;
 			int   toInt(void) const;
-			Fixed(Fixed const &copy)
-			Fixed &operator=(Fixed const &copy)
+			Fixed(Fixed const &copy);
+			Fixed &operator=(Fixed const &copy);
 			int getRawBits(void) const;
 			void setRwaBits(int const raw);
 };
 
-std::ostream	&operator<<(std::ostream &str, Fixed const &nbr)
+std::ostream	&operator<<(std::ostream &str, Fixed const &nbr);
 float			ft_pow(float base, int nbr);
 
 

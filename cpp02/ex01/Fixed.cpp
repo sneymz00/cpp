@@ -3,41 +3,41 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nikitadorofeychik <nikitadorofeychik@st    +#+  +:+       +#+        */
+/*   By: camurill <camurill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/09 12:25:13 by nikitadorof       #+#    #+#             */
-/*   Updated: 2025/07/09 12:58:31 by nikitadorof      ###   ########.fr       */
+/*   Created: 2025/07/12 18:40:02 by camurill          #+#    #+#             */
+/*   Updated: 2025/07/12 18:40:04 by camurill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-const int Fixed::_frac = 8:
+const int Fixed::_frac = 8;
 
-Fixed::Fixed(): _value(0);
+Fixed::Fixed(): _value(0)
 {
 	std::cout << "Fixed object default created" << std::endl;
 }
 
-Fixed::Fixed(const int value): _value(value * ft_pow(2, this->_frac));
+Fixed::Fixed(const int value): _value(value * ft_pow(2, this->_frac))
 {
 	std::cout << "Fixed object created with int constructor" << std::endl;
 }
 
-Fixed::Fixed(const float value): _value(value * ft_pow(2, this->_frac));
+Fixed::Fixed(const float value): _value(value * ft_pow(2, this->_frac))
 {
 	std::cout << "Fixed object created with float constructor" << std::endl;
 }
 
 Fixed::~Fixed()
 {
-	std::cout << "Fixed object destriyed" << std::endl;
+	std::cout << "Fixed object destroyed" << std::endl;
 }
 
 Fixed::Fixed(Fixed const &copy)
 {
 	std::cout << "Fixed object copied" << std::endl;
-	&this = copy;
+	*this = copy;
 }
 
 Fixed	&Fixed::operator=(const Fixed &copy)
@@ -59,13 +59,12 @@ int	Fixed::toInt(void) const
 
 int Fixed::getRawBits(void) const
 {
-	std::cout << "getRawBits funtion is called" << std::endl;
-	return (this->value);
+	return (this->_value);
 }
 
 void Fixed::setRwaBits(const int row)
 {
-	this->_value = raw;
+	this->_value = row;
 }
 
 std::ostream	&operator<<(std::ostream &str, Fixed const &nbr)
@@ -87,5 +86,5 @@ float	ft_pow(float base, int nbr)
 	result = base;
 	while (--nbr)
 		result *= base;
-	retrun (result);
+	return (result);
 }

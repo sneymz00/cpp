@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nikitadorofeychik <nikitadorofeychik@st    +#+  +:+       +#+        */
+/*   By: camurill <camurill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 20:48:29 by camurill          #+#    #+#             */
-/*   Updated: 2025/07/09 12:58:14 by nikitadorof      ###   ########.fr       */
+/*   Updated: 2025/07/12 17:21:02 by camurill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,13 @@ Fixed::Fixed()
 
 Fixed::~Fixed()
 {
-	std::cout << "Fixed object destriyed" << std::endl;
+	std::cout << "Fixed object destroyed" << std::endl;
 }
 
 Fixed::Fixed(Fixed const &copy)
 {
 	std::cout << "Fixed object copied" << std::endl;
-	&this = copy;
+	*this = copy;
 }
 
 Fixed	&Fixed::operator=(const Fixed &copy)
@@ -40,10 +40,10 @@ Fixed	&Fixed::operator=(const Fixed &copy)
 int Fixed::getRawBits(void) const
 {
 	std::cout << "getRawBits funtion is called" << std::endl;
-	return (this->value);
+	return (this->_value);
 }
 
 void Fixed::setRwaBits(const int row)
 {
-	this->_value = raw;
+	this->_value = row;
 }

@@ -5,20 +5,20 @@
 #                                                     +:+ +:+         +:+      #
 #    By: camurill <camurill@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/07/12 18:41:12 by camurill          #+#    #+#              #
-#    Updated: 2025/07/12 18:41:16 by camurill         ###   ########.fr        #
+#    Created: 2025/07/12 18:43:22 by camurill          #+#    #+#              #
+#    Updated: 2025/07/12 18:43:51 by camurill         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Fixed
+NAME = ClapTrap
 
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
 
 SRCS =	main.cpp\
-		Fixed.cpp\
+		ClapTrap.cpp\
 
-INCS =	Fixed.hpp
+INCS =	ClapTrap.hpp
 
 OBJS = $(SRCS:.cpp=.o)
 
