@@ -5,20 +5,21 @@
 #                                                     +:+ +:+         +:+      #
 #    By: camurill <camurill@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/07/12 18:43:22 by camurill          #+#    #+#              #
-#    Updated: 2025/07/12 18:43:51 by camurill         ###   ########.fr        #
+#    Created: 2025/07/15 11:34:20 by camurill          #+#    #+#              #
+#    Updated: 2025/07/15 12:18:05 by camurill         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ClapTrap
+NAME = ScavTrap
 
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98 
 
 SRCS =	main.cpp\
 		ClapTrap.cpp\
+		ScavTrap.cpp
 
-INCS =	ClapTrap.hpp
+INCS =	ClapTrap.hpp ScavTrap.hpp
 
 OBJS = $(SRCS:.cpp=.o)
 

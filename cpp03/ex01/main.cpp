@@ -6,30 +6,36 @@
 /*   By: camurill <camurill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/12 18:39:23 by camurill          #+#    #+#             */
-/*   Updated: 2025/07/15 11:33:15 by camurill         ###   ########.fr       */
+/*   Updated: 2025/07/15 12:49:00 by camurill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main(void)
 {
-	ClapTrap a;
-	ClapTrap b( "Robin" );
+    ScavTrap serena("Serena");
+    ClapTrap basic("Bob");
 
-	//Really dead
-	a.attack("some one chatgpt");
-	a.takeDamage(10);
-	a.takeDamage(10);
-	a.beRepaired(5);
-	a.attack("some one chatgppt");
-	std::cout << "-------------------------" << std::endl;
-	//Win
-	b.attack("other IA robot");
-	b.takeDamage(5);
-	b.beRepaired(10);
-	for (int i = 0; i < 10; i++)
-		b.attack("other IA robot");
-	b.beRepaired(4);
-	return (0);
+    std::cout << "-----------------" << std::endl;
+	std::cout << "Generic attack test" << std::endl;
+    serena.attack("Bob");
+    basic.takeDamage(20);
+
+	std::cout << "-----------------" << std::endl;
+	std::cout << "Fast Attack test" << std::endl;
+    basic.attack("Serena");
+    serena.takeDamage(0); 
+
+    std::cout << "-----------------" << std::endl;
+	std::cout << "Special attack test" << std::endl;
+    serena.guardGate();
+
+    std::cout << "-----------------" << std::endl;
+	std::cout << "Exhaust Energy" << std::endl;
+    for (int i = 0; i < 51; ++i)
+        serena.attack("Wall");
+
+    std::cout << "-----------------" << std::endl;
+    return 0;
 }

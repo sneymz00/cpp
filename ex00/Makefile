@@ -5,20 +5,31 @@
 #                                                     +:+ +:+         +:+      #
 #    By: camurill <camurill@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/07/12 18:43:22 by camurill          #+#    #+#              #
-#    Updated: 2025/07/12 18:43:51 by camurill         ###   ########.fr        #
+#    Created: 2025/07/15 18:53:35 by camurill          #+#    #+#              #
+#    Updated: 2025/07/15 19:11:31 by camurill         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ClapTrap
+NAME = Animal
 
 CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98 
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS =	main.cpp\
-		ClapTrap.cpp\
+SRC = src/
+INC = inc/
 
-INCS =	ClapTrap.hpp
+SRCS =	$(SRC)main.cpp\
+		$(SRC)Animal.cpp\
+		$(SRC)WrongAnimal.cpp\
+		$(SRC)WrongCat.cpp\
+		$(SRC)Cat.cpp\
+		$(SRC)Dog.cpp
+
+INCS =	$(INC)Animal.hpp\
+		$(INC)WrongAnimal.hpp\
+		$(INC)WrongCat.hpp\
+		$(INC)Cat.hpp\
+		$(INC)Dog.hpp
 
 OBJS = $(SRCS:.cpp=.o)
 
