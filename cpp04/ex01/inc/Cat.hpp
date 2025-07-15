@@ -1,32 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: camurill <camurill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/15 18:38:37 by camurill          #+#    #+#             */
-/*   Updated: 2025/07/15 19:26:44 by camurill         ###   ########.fr       */
+/*   Created: 2025/07/15 18:23:52 by camurill          #+#    #+#             */
+/*   Updated: 2025/07/15 20:08:58 by camurill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGANIMAL_HPP
-# define WRONGANIMAL_HPP
+#ifndef CAT_HPP
+# define CAT_HPP
 
-# include <iostream>
+# include "Animal.hpp"
+# include "Brain.hpp"
 
-class WrongAnimal
+class Cat: public Animal
 {
-	protected:
-			std::string _type;
+	private:
+			Brain *_brain;
 	public:
-			WrongAnimal();
-			WrongAnimal(const WrongAnimal &copy);
-			WrongAnimal &operator=(const WrongAnimal& copy);
-			virtual ~WrongAnimal();
+			Cat();
+			Cat(const Cat &copy);
+			virtual ~Cat();
+			Cat	&operator=(const Cat &copy);
 
-			void	makeSound()const;
-			std::string getType(void)const;
+			void	makeSound(void)const;
+			void	setIdeas(size_t i, std::string idea);
+			void	getIdeas(void)const;
 };
 
 #endif

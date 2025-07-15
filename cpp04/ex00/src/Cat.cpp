@@ -1,45 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: camurill <camurill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/15 19:23:30 by camurill          #+#    #+#             */
-/*   Updated: 2025/07/15 19:24:06 by camurill         ###   ########.fr       */
+/*   Created: 2025/07/15 19:21:29 by camurill          #+#    #+#             */
+/*   Updated: 2025/07/15 19:30:38 by camurill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/Dog.hpp"
+#include "../inc/Cat.hpp"
 
-Dog::Dog(): Animal()
+Cat::Cat(): Animal()
 {
-	this->_type = "Dog";
-	std::cout << "Dog Default Constructor called" << std::endl;
+	this->_type = "Cat";
+	std::cout << "Cat Default Constructor called" << std::endl;
 }
 
-Dog::Dog(const Dog &copy): Animal()
+Cat::Cat(const Cat &copy): Animal()
 {
-	std::cout << "Dog Copy Constructor called" << std::endl;
+	std::cout << "Cat Copy Constructor called" << std::endl;
 	*this = copy;
 }
 
-Dog::~Dog()
+Cat::~Cat()
 {
-	std::cout << "Dog Deconstructor called" << std::endl;
+	std::cout << "Cat Deconstructor called" << std::endl;
 }
 
-Dog &Dog::operator=(const Dog &src)
+Cat &Cat::operator=(const Cat &src)
 {
-	std::cout << "Dog Assignation operator called" << std::endl;
+	std::cout << "Cat Assignation operator called" << std::endl;
 	if (this == &src)
 		return *this;
 	this->_type = src._type;
 	return *this;
 }
 
-void Dog::makeSound(void)const
+void Cat::makeSound(void)const
 {
-	std::cout << this->_type<< "sounds like Guuuaauuu" << std::endl;
+	std::cout << this->_type<< "sounds like Miaaaauuuu" << std::endl;
 }
 
