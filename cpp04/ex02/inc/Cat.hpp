@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: camurill <camurill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/15 13:05:56 by camurill          #+#    #+#             */
-/*   Updated: 2025/07/15 20:22:13 by camurill         ###   ########.fr       */
+/*   Created: 2025/07/15 18:23:52 by camurill          #+#    #+#             */
+/*   Updated: 2025/07/15 20:08:58 by camurill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#ifndef CAT_HPP
+# define CAT_HPP
 
-# include <iostream>
-# include <cstdio>
-# include <cstdlib>
+# include "Animal.hpp"
+# include "Brain.hpp"
 
-class Animal
+class Cat: public Animal
 {
-	protected:
-			std::string _type;
+	private:
+			Brain *_brain;
 	public:
-			Animal();
-			Animal(const Animal &copy);
-			Animal &operator=(const Animal& copy);
-			virtual ~Animal();
+			Cat();
+			Cat(const Cat &copy);
+			virtual ~Cat();
+			Cat	&operator=(const Cat &copy);
 
-			virtual void	makeSound()const;
-			std::string		getType(void)const;
+			void	makeSound(void)const;
+			void	setIdeas(size_t i, std::string idea);
+			void	getIdeas(void)const;
 };
 
 #endif

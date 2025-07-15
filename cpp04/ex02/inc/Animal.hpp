@@ -6,7 +6,7 @@
 /*   By: camurill <camurill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 13:05:56 by camurill          #+#    #+#             */
-/*   Updated: 2025/07/15 20:22:13 by camurill         ###   ########.fr       */
+/*   Updated: 2025/07/15 20:56:34 by camurill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,13 @@ class Animal
 {
 	protected:
 			std::string _type;
-	public:
 			Animal();
+	public:
 			Animal(const Animal &copy);
 			Animal &operator=(const Animal& copy);
 			virtual ~Animal();
 
-			virtual void	makeSound()const;
+			virtual void	makeSound()const = 0;
 			std::string		getType(void)const;
 };
 
