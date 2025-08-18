@@ -6,7 +6,7 @@
 /*   By: camurill <camurill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/16 12:55:23 by camurill          #+#    #+#             */
-/*   Updated: 2025/08/18 14:46:36 by camurill         ###   ########.fr       */
+/*   Updated: 2025/08/18 16:28:36 by camurill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # include <iostream>
 # include <string>
 # include "Form.hpp"
+
+class Form ;
 
 class Bureaucrat {
 	private:

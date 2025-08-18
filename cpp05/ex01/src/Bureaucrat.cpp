@@ -6,7 +6,7 @@
 /*   By: camurill <camurill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/16 13:06:43 by camurill          #+#    #+#             */
-/*   Updated: 2025/08/18 14:48:14 by camurill         ###   ########.fr       */
+/*   Updated: 2025/08/18 16:33:49 by camurill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ void Bureaucrat::signForm(Form &form)
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << _name << " cannot sign " << form.getNameF() << e.what() << '\n';
+		std::cerr << _name << " cannot sign " << form.getNameF() << " because " << e.what() << '\n';
 	}
 }
 

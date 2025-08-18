@@ -6,7 +6,7 @@
 /*   By: camurill <camurill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/16 12:55:23 by camurill          #+#    #+#             */
-/*   Updated: 2025/08/18 14:51:06 by camurill         ###   ########.fr       */
+/*   Updated: 2025/08/18 16:40:51 by camurill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,9 @@
 
 # include <iostream>
 # include <string>
-# include <AForm.hpp>
+# include "AForm.hpp"
+
+class AForm ;
 
 class Bureaucrat {
 	private:

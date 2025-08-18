@@ -6,7 +6,7 @@
 /*   By: camurill <camurill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/16 13:45:57 by camurill          #+#    #+#             */
-/*   Updated: 2025/08/18 15:27:58 by camurill         ###   ########.fr       */
+/*   Updated: 2025/08/18 16:53:27 by camurill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@ AForm::AForm(): _name("Default"), _signed(false), _grade_to_sign(150), _grade_to
 
 }
 
-AForm::AForm(const std::string name, const int sign, const int exec): _name(name), _grade_to_exec(exec), _grade_to_sign(sign), _signed(false)
+AForm::AForm(const std::string name, const int sign, const int exec): _name(name), _signed(false),  _grade_to_sign(sign), _grade_to_exec(exec)
 {
 
 }
 
-AForm::AForm(const AForm &copy): _name(copy._name), _signed(copy._signed), _grade_to_exec(copy._grade_to_exec), _grade_to_sign(copy._grade_to_exec)
+AForm::AForm(const AForm &copy): _name(copy._name), _signed(copy._signed), _grade_to_sign(copy._grade_to_sign),_grade_to_exec(copy._grade_to_exec)
 {
 
 }
@@ -72,15 +72,14 @@ void	AForm::setIsSigned(bool sign)
 	_signed = sign;
 }
 
-void	AForm::execute(const Bureaucrat *exec) const
+void	AForm::execute(const Bureaucrat &exec) const
 {
 	if (_signed == false)
 		throw IsNotSignedException();
-	if (_grade_to_exec < exec->getGrade())
+	if (_grade_to_exec < exec.getGrade())
 		throw GradeTooLowException();
 	
 	performAction();
-	
 }
 
 const char *AForm::GradeTooHighException::what() const throw()

@@ -6,7 +6,7 @@
 /*   By: camurill <camurill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/18 16:16:34 by camurill          #+#    #+#             */
-/*   Updated: 2025/08/18 16:20:31 by camurill         ###   ########.fr       */
+/*   Updated: 2025/08/18 16:49:53 by camurill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ ShrubberyCreationForm::ShrubberyCreationForm() : AForm("ShrubberyCreationForm", 
 
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(const std::string target) : AForm("PresitentialPardonForm", 145, 137), _target(target)
+ShrubberyCreationForm::ShrubberyCreationForm(const std::string target) : AForm("ShrubberyCreationForm", 145, 137), _target(target)
 {
 	
 }

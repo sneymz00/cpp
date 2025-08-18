@@ -6,7 +6,7 @@
 /*   By: camurill <camurill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/18 16:04:51 by camurill          #+#    #+#             */
-/*   Updated: 2025/08/18 16:21:30 by camurill         ###   ########.fr       */
+/*   Updated: 2025/08/18 16:49:27 by camurill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ RobotomyRequestForm::RobotomyRequestForm() : AForm("RobotomyRequestForm", 72, 45
 
 }
 
-RobotomyRequestForm::RobotomyRequestForm(const std::string target) : AForm("PresitentialPardonForm", 72, 45), _target(target)
+RobotomyRequestForm::RobotomyRequestForm(const std::string target) : AForm("RobotomyRequestForm", 72, 45), _target(target)
 {
 	
 }

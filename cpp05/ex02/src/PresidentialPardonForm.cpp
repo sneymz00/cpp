@@ -6,7 +6,7 @@
 /*   By: camurill <camurill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/18 15:58:14 by camurill          #+#    #+#             */
-/*   Updated: 2025/08/18 16:04:14 by camurill         ###   ########.fr       */
+/*   Updated: 2025/08/18 16:45:53 by camurill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,11 @@ PresidentialPardonForm::~PresidentialPardonForm()
 PresidentialPardonForm &PresidentialPardonForm::operator=(const PresidentialPardonForm &copy)
 {
 	_target = copy._target;
-	setIsSigned(copy.getIsSigned);
+	setIsSigned(copy.getIsSigned());
 	return (*this);
+}
+
+void PresidentialPardonForm::performAction() const
+{
+	std::cout << this->getNameF() << " has been pardoned by Zaphod Beeblebrox." << std::endl;
 }

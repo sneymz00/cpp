@@ -6,7 +6,7 @@
 /*   By: camurill <camurill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/16 13:42:30 by camurill          #+#    #+#             */
-/*   Updated: 2025/08/18 15:27:59 by camurill         ###   ########.fr       */
+/*   Updated: 2025/08/18 16:53:16 by camurill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ class AForm {
 	int			getSignGrade() const;
 	int			getExecuteGrade() const;
 	void		setIsSigned(bool sign);
-	void		execute(const Bureaucrat *exec) const;
+	void		execute(const Bureaucrat &exec) const;
 
 	class GradeTooHighException : public std::exception
 	{

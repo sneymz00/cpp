@@ -6,7 +6,7 @@
 /*   By: camurill <camurill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/16 13:45:57 by camurill          #+#    #+#             */
-/*   Updated: 2025/08/18 14:29:19 by camurill         ###   ########.fr       */
+/*   Updated: 2025/08/18 16:31:28 by camurill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@ Form::Form(): _name("Default"), _signed(false), _grade_to_sign(150), _grade_to_e
 
 }
 
-Form::Form(const std::string name, const int sign, const int exec): _name(name), _grade_to_exec(exec), _grade_to_sign(sign), _signed(false)
+Form::Form(const std::string name, const int sign, const int exec): _name(name), _signed(false), _grade_to_sign(sign), _grade_to_exec(exec) 
 {
 
 }
 
-Form::Form(const Form &copy): _name(copy._name), _signed(copy._signed), _grade_to_exec(copy._grade_to_exec), _grade_to_sign(copy._grade_to_exec)
+Form::Form(const Form &copy): _name(copy._name), _signed(copy._signed), _grade_to_sign(copy._grade_to_sign),_grade_to_exec(copy._grade_to_exec)
 {
 
 }

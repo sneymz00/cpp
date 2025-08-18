@@ -6,80 +6,75 @@
 /*   By: camurill <camurill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/16 13:05:19 by camurill          #+#    #+#             */
-/*   Updated: 2025/08/18 14:48:38 by camurill         ###   ########.fr       */
+/*   Updated: 2025/08/18 16:27:45 by camurill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/Bureaucrat.hpp"
+#include "../inc/PresidentialPardonForm.hpp"
+#include "../inc/RobotomyRequestForm.hpp"
+#include "../inc/ShrubberyCreationForm.hpp"
 #include <stdexcept>
 
 int main()
 {
-	try 
-	{
-        // Test 1: Crear bureaucrats válidos
-        std::cout << "\n--- Test 1: Creando bureaucrats válidos ---" << std::endl;
-        Bureaucrat bob("Bob", 75);
-        Bureaucrat alice("Alice", 1);
-        Bureaucrat charlie("Charlie", 150);
+	 try {
+        // Test 1: Crear bureaucrats con diferentes grades
+        std::cout << "\n--- Test 1: Creando bureaucrats ---" << std::endl;
+        Bureaucrat president("President", 1);
+        Bureaucrat manager("Manager", 50);
+        Bureaucrat intern("Intern", 150);
 
-        std::cout << bob << std::endl;
-        std::cout << alice << std::endl;
-        std::cout << charlie << std::endl;
+        std::cout << president << std::endl;
+        std::cout << manager << std::endl;
+        std::cout << intern << std::endl;
 
-        // Test 2: Increment y decrement
-        std::cout << "\n--- Test 2: Increment y decrement ---" << std::endl;
-        std::cout << "Bob antes: " << bob << std::endl;
-        bob.incrementGrade(); // 75 -> 74
-        std::cout << "Bob después de increment: " << bob << std::endl;
-        bob.decrementGrade(); // 74 -> 75
-        std::cout << "Bob después de decrement: " << bob << std::endl;
+        // Test 2: Crear las tres formas específicas
+        std::cout << "\n--- Test 2: Creando formas específicas ---" << std::endl;
+        ShrubberyCreationForm shrubbery("garden");
+        RobotomyRequestForm robotomy("Bender");
+        PresidentialPardonForm pardon("Arthur Dent");
 
-    } 
-	catch (std::exception& e) 
-	{
-        std::cout << "Excepción capturada: " << e.what() << std::endl;
-    }
+        std::cout << shrubbery << std::endl;
+        std::cout << robotomy << std::endl;
+        std::cout << pardon << std::endl;
 
-    // Test 3: Grade too high en constructor
-    std::cout << "\n--- Test 3: Grade too high en constructor ---" << std::endl;
-    try {
-        Bureaucrat invalid("Invalid", 0);
-    } 
-	catch (std::exception& e) 
-	{
-        std::cout << "Excepción capturada: " << e.what() << std::endl;
-    }
+        // Test 3: Firmar y ejecutar ShrubberyCreationForm
+        std::cout << "\n--- Test 3: ShrubberyCreationForm ---" << std::endl;
+        manager.signForm(shrubbery); // Grade 50 > 145 requerido
+        manager.executeForm(shrubbery); // Grade 50 > 137 requerido
 
-    // Test 4: Grade too low en constructor
-    std::cout << "\n--- Test 4: Grade too low en constructor ---" << std::endl;
-    try 
-	{
-        Bureaucrat invalid("Invalid", 151);
-    } 
-	catch (std::exception& e) 
-	{
-        std::cout << "Excepción capturada: " << e.what() << std::endl;
-    }
+        // Test 4: Firmar y ejecutar RobotomyRequestForm
+        std::cout << "\n--- Test 4: RobotomyRequestForm ---" << std::endl;
+        manager.signForm(robotomy); // Grade 50 > 72 requerido
+        manager.executeForm(robotomy); // Grade 50 > 45 requerido
 
-    // Test 5: Increment grade 1
-    std::cout << "\n--- Test 5: Increment grade 1 (should throw) ---" << std::endl;
-    try {
-        Bureaucrat top("Top", 1);
-        std::cout << "Antes: " << top << std::endl;
-        top.incrementGrade(); // Debería lanzar excepción
+        // Test 5: PresidentialPardonForm (requiere grades altos)
+        std::cout << "\n--- Test 5: PresidentialPardonForm ---" << std::endl;
+        president.signForm(pardon); // Grade 1 > 25 requerido
+        president.executeForm(pardon); // Grade 1 > 5 requerido
+
+        // Test 6: Intentar ejecutar sin firmar
+        std::cout << "\n--- Test 6: Ejecutar sin firmar ---" << std::endl;
+        ShrubberyCreationForm unsignedForm("unsigned");
+        std::cout << unsignedForm << std::endl;
+        president.executeForm(unsignedForm); // Debería fallar
+
+        // Test 7: Grade insuficiente para firmar
+        std::cout << "\n--- Test 7: Grade insuficiente para firmar ---" << std::endl;
+        PresidentialPardonForm hardForm("impossible");
+        intern.signForm(hardForm); // Grade 150 < 25 requerido
+
+        // Test 8: Grade insuficiente para ejecutar
+        std::cout << "\n--- Test 8: Grade insuficiente para ejecutar ---" << std::endl;
+        ShrubberyCreationForm easyToSign("easy");
+        Bureaucrat signer("Signer", 100); // Puede firmar (100 > 145 es falso, necesitamos alguien mejor)
+        Bureaucrat betterSigner("BetterSigner", 140); // Puede firmar (140 <= 145)
+        betterSigner.signForm(easyToSign);
+        intern.executeForm(easyToSign); // Grade 150 < 137 requerido
+
     } catch (std::exception& e) {
         std::cout << "Excepción capturada: " << e.what() << std::endl;
     }
-
-    // Test 6: Decrement grade 150
-    std::cout << "\n--- Test 6: Decrement grade 150 (should throw) ---" << std::endl;
-    try {
-        Bureaucrat bottom("Bottom", 150);
-        std::cout << "Antes: " << bottom << std::endl;
-        bottom.decrementGrade(); // Debería lanzar excepción
-    } catch (std::exception& e) {
-        std::cout << "Excepción capturada: " << e.what() << std::endl;
-    }
-	return (0);
+    return (0);
 }
