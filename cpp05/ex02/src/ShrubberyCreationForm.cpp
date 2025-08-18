@@ -6,7 +6,7 @@
 /*   By: camurill <camurill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/18 16:16:34 by camurill          #+#    #+#             */
-/*   Updated: 2025/08/18 16:49:53 by camurill         ###   ########.fr       */
+/*   Updated: 2025/08/18 17:04:27 by camurill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,9 @@ void ShrubberyCreationForm::performAction() const
 		outFile << "    ||    \n";
 
 		outFile.close();
-	}	
-	throw OpenFileExeption();
+	}
+	else	
+		throw OpenFileExeption();
 }
 
 const char *ShrubberyCreationForm::OpenFileExeption::what() const throw()
