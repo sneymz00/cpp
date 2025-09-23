@@ -6,7 +6,7 @@
 /*   By: camurill <camurill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/16 13:45:57 by camurill          #+#    #+#             */
-/*   Updated: 2025/08/18 16:53:27 by camurill         ###   ########.fr       */
+/*   Updated: 2025/09/23 13:20:02 by camurill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ bool	AForm::getIsSigned() const
 
 int	AForm::getSignGrade() const
 {
-	return (_grade_to_exec);
+	return (_grade_to_sign);
 }
 
 int AForm::getExecuteGrade() const

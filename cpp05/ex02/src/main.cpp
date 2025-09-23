@@ -6,7 +6,7 @@
 /*   By: camurill <camurill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/16 13:05:19 by camurill          #+#    #+#             */
-/*   Updated: 2025/08/18 16:27:45 by camurill         ###   ########.fr       */
+/*   Updated: 2025/09/23 13:23:54 by camurill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 int main()
 {
 	 try {
-        // Test 1: Crear bureaucrats con diferentes grades
-        std::cout << "\n--- Test 1: Creando bureaucrats ---" << std::endl;
+        // Test 1: Creating bureaucrats with diferents grades
+        std::cout << "\n--- Test 1: Creating bureaucrats ---" << std::endl;
         Bureaucrat president("President", 1);
         Bureaucrat manager("Manager", 50);
         Bureaucrat intern("Intern", 150);
@@ -29,8 +29,8 @@ int main()
         std::cout << manager << std::endl;
         std::cout << intern << std::endl;
 
-        // Test 2: Crear las tres formas específicas
-        std::cout << "\n--- Test 2: Creando formas específicas ---" << std::endl;
+        // Test 2: Creating Forms
+        std::cout << "\n--- Test 2: Creating Forms ---" << std::endl;
         ShrubberyCreationForm shrubbery("garden");
         RobotomyRequestForm robotomy("Bender");
         PresidentialPardonForm pardon("Arthur Dent");
@@ -39,39 +39,41 @@ int main()
         std::cout << robotomy << std::endl;
         std::cout << pardon << std::endl;
 
-        // Test 3: Firmar y ejecutar ShrubberyCreationForm
+        // Test 3: Sign and execute ShrubberyCreationForm
         std::cout << "\n--- Test 3: ShrubberyCreationForm ---" << std::endl;
-        manager.signForm(shrubbery); // Grade 50 > 145 requerido
-        manager.executeForm(shrubbery); // Grade 50 > 137 requerido
+        manager.signForm(shrubbery); // Grade 50 > 145 requested
+        manager.executeForm(shrubbery); // Grade 50 > 137 requested
 
-        // Test 4: Firmar y ejecutar RobotomyRequestForm
+        // Test 4: Sign and execute  RobotomyRequestForm
         std::cout << "\n--- Test 4: RobotomyRequestForm ---" << std::endl;
-        manager.signForm(robotomy); // Grade 50 > 72 requerido
-        manager.executeForm(robotomy); // Grade 50 > 45 requerido
+        manager.signForm(robotomy); // Grade 50 > 72 requested
+        manager.executeForm(robotomy); // Grade 50 > 45 requested
 
-        // Test 5: PresidentialPardonForm (requiere grades altos)
+        // Test 5: PresidentialPardonForm (requires high grades)
         std::cout << "\n--- Test 5: PresidentialPardonForm ---" << std::endl;
-        president.signForm(pardon); // Grade 1 > 25 requerido
-        president.executeForm(pardon); // Grade 1 > 5 requerido
+        president.signForm(pardon); // Grade 1 > 25 requested
+        president.executeForm(pardon); // Grade 1 > 5 requested
 
-        // Test 6: Intentar ejecutar sin firmar
-        std::cout << "\n--- Test 6: Ejecutar sin firmar ---" << std::endl;
+        // Test 6: Try to run without signing
+        std::cout << "\n--- Test 6: Try to run without signing ---" << std::endl;
         ShrubberyCreationForm unsignedForm("unsigned");
         std::cout << unsignedForm << std::endl;
-        president.executeForm(unsignedForm); // Debería fallar
+        president.executeForm(unsignedForm); // Failed
 
-        // Test 7: Grade insuficiente para firmar
-        std::cout << "\n--- Test 7: Grade insuficiente para firmar ---" << std::endl;
+        // Test 7: Insufficient grade to sign
+        std::cout << "\n--- Test 7: Insufficient grade to sign ---" << std::endl;
         PresidentialPardonForm hardForm("impossible");
-        intern.signForm(hardForm); // Grade 150 < 25 requerido
+        intern.signForm(hardForm); // Grade 150 < 25 requested
 
-        // Test 8: Grade insuficiente para ejecutar
-        std::cout << "\n--- Test 8: Grade insuficiente para ejecutar ---" << std::endl;
+        // Test 8: Insufficient grade to execute
+        std::cout << "\n--- Test 8: Insufficient grade to execute ---" << std::endl;
         ShrubberyCreationForm easyToSign("easy");
-        Bureaucrat signer("Signer", 100); // Puede firmar (100 > 145 es falso, necesitamos alguien mejor)
-        Bureaucrat betterSigner("BetterSigner", 140); // Puede firmar (140 <= 145)
+        Bureaucrat signer("Signer", 140); // Can sign 
+        Bureaucrat betterSigner("BetterSigner", 100); // You can execute (100 < 145)
+        signer.signForm(easyToSign);
         betterSigner.signForm(easyToSign);
-        intern.executeForm(easyToSign); // Grade 150 < 137 requerido
+        signer.executeForm(easyToSign); // Grade 150 < 137 requested
+        betterSigner.executeForm(easyToSign);
 
     } catch (std::exception& e) {
         std::cout << "Excepción capturada: " << e.what() << std::endl;

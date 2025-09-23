@@ -6,11 +6,11 @@
 #    By: camurill <camurill@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/16 12:54:20 by camurill          #+#    #+#              #
-#    Updated: 2025/08/18 16:38:30 by camurill         ###   ########.fr        #
+#    Updated: 2025/09/23 13:16:23 by camurill         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Form
+NAME = AForm
 
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98

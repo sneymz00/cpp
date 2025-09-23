@@ -79,6 +79,7 @@
 		"cfenv": "cpp",
 		"cinttypes": "cpp",
 		"typeindex": "cpp",
-		"semaphore": "cpp"
+		"semaphore": "cpp",
+		"robotomyrequestform.hpp": "c"
 	}
 }
