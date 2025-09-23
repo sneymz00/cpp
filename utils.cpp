@@ -1,77 +1,47 @@
-// Constructors
-Bureaucrat::Bureaucrat() : _name("default"), _grade(150)
+
+#ifndef SCALARCONVERTER_HPP
+# define SCALARCONVERTER_HPP
+
+# include <iostream>
+# include <iomanip>
+# include <exception>
+# include <cstdlib>
+# include <limits>
+# include <cmath>
+
+# define MIN_INT std::numeric_limits<int>::min() //-2147483648
+# define MAX_INT std::numeric_limits<int>::max() //2147483647
+# define MIN_FLOAT std::numeric_limits<float>::min() //-3.40282e+38
+# define MAX_FLOAT std::numeric_limits<float>::max() //3.40282e+38
+# define MIN_DOUBLE std::numeric_limits<double>::min() //-1.79769e+308
+# define MAX_DOUBLE std::numeric_limits<double>::max() //1.79769e+308
+
+enum    e_type
 {
+    SPECIAL = 0,
+    CHAR = 1,
+    INT = 2,
+    FLOAT = 3,
+    DOUBLE = 4,
+    INVALID = -1
+};
 
-}
-
-Bureaucrat::Bureaucrat(const std::string name, int grade) : _name(name)
-{	
-	if (grade < 1)
-		throw GradeTooHighException();
-	else if (grade > 150)
-		throw GradeTooLowException();
-	else
-		_grade = grade;
-}
-
-Bureaucrat::Bureaucrat(const Bureaucrat &other) : _name(other._name), _grade(other._grade)
+class	ScalarConverter
 {
+	private:
+		ScalarConverter(void);
+		ScalarConverter(ScalarConverter const &src);
+		~ScalarConverter(void);
+		ScalarConverter	&operator=(ScalarConverter const &rhs);
+	public:
+		static void	convert(const std::string& str);
+};
 
-}
+e_type	whichType(const std::string& str, size_t& len);
+void	printSpecial(const std::string& str);
+void	convertChar(const std::string& str, size_t& len);
+void	convertInt(const std::string& str);
+void	convertFloat(const std::string& str);
+void	convertDouble(const std::string& str);
 
-Bureaucrat &Bureaucrat::operator=(const Bureaucrat &other)
-{
-	if (this != &other)
-		_grade = other._grade;	
-	return (*this);
-}
-
-
-Bureaucrat::~Bureaucrat()
-{
-
-}
-
-// Member functions
-std::string Bureaucrat::getName() const
-{
-	return (_name);
-}
-
-int Bureaucrat::getGrade() const
-{
-	return (_grade);
-}
-
-void Bureaucrat::incrementGrade()
-{
-	if (_grade == 1)
-		throw GradeTooHighException();
-	else
-	_grade--;
-}
-
-void Bureaucrat::decrementGrade()
-{
-	if (_grade == 150)
-		throw GradeTooLowException();
-	else
-		_grade++;
-}
-
-std::ostream &operator<<(std::ostream &os, Bureaucrat const &other)
-{
-	os << other.getName() << ", bureaucrat grade " << other.getGrade() << std::endl;
-	return (os);
-}
-
-// Exceptions
-const char *Bureaucrat::GradeTooHighException::what() const throw()
-{
-	return ("Grade too high!");
-}
-
-const char *Bureaucrat::GradeTooLowException::what() const throw()
-{
-	return ("Grade too low!");
-}
+#endif
