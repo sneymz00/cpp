@@ -6,7 +6,7 @@
 /*   By: camurill <camurill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 13:35:21 by camurill          #+#    #+#             */
-/*   Updated: 2025/09/23 13:49:33 by camurill         ###   ########.fr       */
+/*   Updated: 2025/09/23 16:32:39 by camurill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,8 @@ class ScalarConverter
 	public:
 			static void convert(const std::string& str);
 };
+
+e_type WhichType(const std::string& str, size_t& len);
+
 
 #endif
