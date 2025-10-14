@@ -6,7 +6,7 @@
 /*   By: camurill <camurill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 17:04:05 by camurill          #+#    #+#             */
-/*   Updated: 2025/09/23 17:04:10 by camurill         ###   ########.fr       */
+/*   Updated: 2025/09/30 16:37:04 by camurill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ static int isInt(const std::string& str, size_t& len)
 		sum = true;
 		i++;
 	}
-	while (str[i] && len > 0 && len < 12 || (str[i] && !sum && len > 0 && len < 11))
+	while ((str[i] && len > 0 && len < 12) || (str[i] && !sum && len > 0 && len < 11))
 	{
 		if (!isdigit(str[i]))
 			return 0;
@@ -49,14 +49,14 @@ static int isInt(const std::string& str, size_t& len)
 
 static int isFloat(const std::string& str, size_t& len, size_t& fl)
 {
-	for (int j = fl - 1; j >= 0; j--)
+	for (size_t j = fl - 1; j > 0; j--)
 	{
 		if (!isdigit(str[j]) && j != 0)
 			return 0;
 		if (!isdigit(str[j]) && j != 0 &&  (str[j] != '+' && str[j] != '-'))
 			return 0;
 	}
-	for (int i = fl + 1; i < len; i++)
+	for (size_t i = fl + 1; i < len; i++)
 	{
 		if (!isdigit(str[i]) && str[i] != 'f')
 			return 0;
@@ -71,7 +71,7 @@ e_type WhichType(const std::string& str, size_t& len)
 	size_t	fl = str.find('.');
 	size_t	f = str.find('f');
 
-	if (fl = std::string::npos)
+	if (fl == std::string::npos)
 	{
 		if (isSpecial(str))
 			return (SPECIAL);
@@ -81,7 +81,7 @@ e_type WhichType(const std::string& str, size_t& len)
 			return (INT);
 	}
 	if (f != std::string::npos && fl != std::string::npos && isFloat(str, len, fl))
-		return (FLOAT);
+			return (FLOAT);
 	if (f == std::string::npos && fl != std::string::npos)
 		return (DOUBLE);
 	return (INVALID);

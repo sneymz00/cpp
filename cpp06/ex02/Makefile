@@ -5,24 +5,24 @@
 #                                                     +:+ +:+         +:+      #
 #    By: camurill <camurill@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/09/23 17:05:26 by camurill          #+#    #+#              #
-#    Updated: 2025/09/30 16:28:30 by camurill         ###   ########.fr        #
+#    Created: 2025/10/03 17:11:14 by camurill          #+#    #+#              #
+#    Updated: 2025/10/03 17:12:02 by camurill         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Convert
+NAME = Intern
 
 CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -g
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = src/
-INC = inc/
+SRCS =	main.cpp\
+		Base.cpp
+		
 
-SRCS =	$(SRC)main.cpp\
-		$(SRC)ScalarConverter.cpp\
-		$(SRC)Which_type.cpp
-
-INCS =	$(INC)ScalarConverter.hpp
+INCS =	A.hpp\
+		Base.hpp\
+		B.hpp\
+		C.hpp
 
 OBJS = $(SRCS:.cpp=.o)
 

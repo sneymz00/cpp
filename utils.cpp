@@ -1,47 +1,62 @@
 
-#ifndef SCALARCONVERTER_HPP
-# define SCALARCONVERTER_HPP
 
-# include <iostream>
-# include <iomanip>
-# include <exception>
-# include <cstdlib>
-# include <limits>
-# include <cmath>
 
-# define MIN_INT std::numeric_limits<int>::min() //-2147483648
-# define MAX_INT std::numeric_limits<int>::max() //2147483647
-# define MIN_FLOAT std::numeric_limits<float>::min() //-3.40282e+38
-# define MAX_FLOAT std::numeric_limits<float>::max() //3.40282e+38
-# define MIN_DOUBLE std::numeric_limits<double>::min() //-1.79769e+308
-# define MAX_DOUBLE std::numeric_limits<double>::max() //1.79769e+308
-
-enum    e_type
+void	convertFloat(const std::string& str)
 {
-    SPECIAL = 0,
-    CHAR = 1,
-    INT = 2,
-    FLOAT = 3,
-    DOUBLE = 4,
-    INVALID = -1
-};
+	float	f = std::atof(str.c_str());
+	bool	tolerance = std::fabs(f - static_cast<int>(f)) < 0.0000000000001;
 
-class	ScalarConverter
+	std::cout << "char: ";
+	if (f < 0 || f > 127)
+		std::cout << "impossible" << std::endl;
+	else
+	{
+		if (isprint(f))
+			std::cout << "'" << static_cast<char>(f) << "'" << std::endl;
+		else 
+			std::cout << "Non displayable" << std::endl;
+	}
+	std::cout << "int: ";
+	if (static_cast<long>(f) < MIN_INT || static_cast<long>(f) > MAX_INT)
+		std::cout << "impossible" << std::endl;
+	else
+		std::cout << static_cast<int>(f) << std::endl;
+	std::cout << "float: ";
+	if (f < MIN_FLOAT || f > MAX_FLOAT)
+		std::cout << "impossible" << std::endl;
+	else
+		std::cout << f << (tolerance ? ".0f" : "f") << std::endl;
+	std::cout << "double: " << static_cast<double>(f) << (tolerance ? ".0" : "") << std::endl;
+}
+
+void	convertDouble(const std::string& str)
 {
-	private:
-		ScalarConverter(void);
-		ScalarConverter(ScalarConverter const &src);
-		~ScalarConverter(void);
-		ScalarConverter	&operator=(ScalarConverter const &rhs);
-	public:
-		static void	convert(const std::string& str);
-};
+	double		d = std::atof(str.c_str());
+	bool		tolerance = std::fabs(d - static_cast<int>(d)) < 0.0000000000001;
 
-e_type	whichType(const std::string& str, size_t& len);
-void	printSpecial(const std::string& str);
-void	convertChar(const std::string& str, size_t& len);
-void	convertInt(const std::string& str);
-void	convertFloat(const std::string& str);
-void	convertDouble(const std::string& str);
-
-#endif
+	std::cout << "char: ";
+	if (d < 0 || d > 127)
+		std::cout << "impossible" << std::endl;
+	else
+	{
+		if (isprint(d))
+			std::cout << "'" << static_cast<char>(d) << "'" << std::endl;
+		else 
+			std::cout << "Non displayable" << std::endl;
+	}
+	std::cout << "int: ";
+	if (d < MIN_INT || d > MAX_INT)
+		std::cout << "impossible" << std::endl;
+	else
+		std::cout << static_cast<int>(d) << std::endl;
+	std::cout << "float: ";
+	if (d < MIN_FLOAT || d > MAX_FLOAT)
+		std::cout << "impossible" << std::endl;
+	else
+		std::cout << static_cast<float>(d) << (tolerance ? ".0f" : "f") << std::endl;
+	std::cout << "double: ";
+	if (d < MIN_DOUBLE || d > MAX_DOUBLE)
+		std::cout << "impossible" << std::endl;
+	else
+		std::cout << d << std::endl;
+}
