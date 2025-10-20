@@ -6,13 +6,10 @@
 /*   By: camurill <camurill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 17:03:45 by camurill          #+#    #+#             */
-/*   Updated: 2025/10/03 17:03:59 by camurill         ###   ########.fr       */
+/*   Updated: 2025/10/20 15:38:04 by camurill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Base.hpp"
 
-Base::~Base()
-{
-	
-}
+Base::~Base(){}

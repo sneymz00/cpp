@@ -6,7 +6,7 @@
 /*   By: camurill <camurill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 17:00:08 by camurill          #+#    #+#             */
-/*   Updated: 2025/10/03 17:01:42 by camurill         ###   ########.fr       */
+/*   Updated: 2025/10/20 15:37:50 by camurill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 class Base
 {
 	public:
-			~Base();
+			virtual ~Base();
 };
 
 #endif
