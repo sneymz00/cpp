@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Converter.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: camurill <camurill@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nikitadorofeychik <nikitadorofeychik@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 16:30:48 by camurill          #+#    #+#             */
-/*   Updated: 2025/10/03 16:27:22 by camurill         ###   ########.fr       */
+/*   Updated: 2025/10/20 13:31:50 by nikitadorof      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void	printChar(const std::string& str, size_t len)
 		std::cout << "Non dispayable" << std::endl;
 }
 
-void printFloat(const std::string& str, size_t len)
+void printInt(const std::string& str, size_t len)
 {
 	long	nbr = std::atol(str.c_str());
 
@@ -78,4 +78,63 @@ void printFloat(const std::string& str, size_t len)
 		std::cout << static_cast<int>(nbr) << std::endl;
 	std::cout << "float: " << static_cast<float>(nbr) << ".0f" << std::endl;
 	std::cout << "double: " << static_cast<double>(nbr) << ".0" << std::endl;
+}
+
+void	printFloat(const std::string& str)
+{
+	float	nbr =  std::atof(str.c_str());
+	bool	tol = std::fabs(nbr - static_cast<int>(nbr)) < 0;
+
+	std::cout << "char: ";
+	if (nbr < 0 || nbr > 127)
+		std::cout << "impossible" << std::endl;
+	else
+	{
+		if (isprint(nbr))
+			std::cout << "'" << static_cast<char>(nbr) << "'" << std::endl;
+		else
+			std::cout << "Non displayable" << std::endl;
+	}
+	std::cout << "int: ";
+	if (static_cast<long>(nbr) < MIN_INT || static_cast<long>(nbr) > MAX_INT)
+		std::cout << "impossible" << std::endl;
+	else
+		std::cout << static_cast<int>(nbr) << std::endl;
+	std::cout << "float: ";
+	if (nbr < MIN_FLOAT || nbr > MAX_FLOAT)
+		std::cout << "impossible" << std::endl;
+	else
+		std::cout << nbr << std::endl;
+	std::cout << "double" << static_cast<double>(nbr) << (tol ? ".0" : "") std::endl;
+}
+
+void	printDouble(std::string& str)
+{
+	double	nbr = std::atof(str.c_str());
+	bool	tol = std::fabs(nbr - static_cast<int>(nbr)) < 0.0000000000001;
+
+	std::cout << "char: ";
+	if (nbr < 0 || nbr > 127)
+		std::cout << "impossible" << std::endl;
+	else
+	{
+		if (isprint(nbr))
+			std::cout << "'" << static_cast<char>(nbr) << "'" << std::endl;
+		else
+			std::cout << "Non displayable" << std::endl;
+	std::cout << "int: ";
+	if (nbr < MIN_INT || nbr > MAX_INT)
+		std::cout << "impossible" << std::endl;
+	else
+		std::cout << static_cast<int>(nbr) << std::endl;
+	std::cout << "float: ";
+	if (nbr < MIN_FLOAT || nbr > MAX_FLOAT)
+		std::cout << "impossible" << std::endl;
+	else
+		std::cout << static_cast<float>(nbr) << std::endl;
+	std::cout << "double: ";
+	if (nbr < MIN_DOUBLE || nbr > MAX_DOUBLE)
+		std::cout << "impossible" << std::endl;
+	else
+		std::cout << nbr << std::endl;
 }
