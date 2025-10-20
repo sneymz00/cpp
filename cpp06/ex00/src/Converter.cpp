@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Converter.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nikitadorofeychik <nikitadorofeychik@st    +#+  +:+       +#+        */
+/*   By: camurill <camurill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 16:30:48 by camurill          #+#    #+#             */
-/*   Updated: 2025/10/20 13:31:50 by nikitadorof      ###   ########.fr       */
+/*   Updated: 2025/10/20 13:58:18 by camurill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void	printChar(const std::string& str, size_t len)
 		std::cout << "Non dispayable" << std::endl;
 }
 
-void printInt(const std::string& str, size_t len)
+void printInt(const std::string& str)
 {
 	long	nbr = std::atol(str.c_str());
 
@@ -105,10 +105,10 @@ void	printFloat(const std::string& str)
 		std::cout << "impossible" << std::endl;
 	else
 		std::cout << nbr << std::endl;
-	std::cout << "double" << static_cast<double>(nbr) << (tol ? ".0" : "") std::endl;
+	std::cout << "double" << static_cast<double>(nbr) << (tol ? ".0" : "") << std::endl;
 }
 
-void	printDouble(std::string& str)
+void	printDouble(const std::string& str)
 {
 	double	nbr = std::atof(str.c_str());
 	bool	tol = std::fabs(nbr - static_cast<int>(nbr)) < 0.0000000000001;
@@ -122,6 +122,7 @@ void	printDouble(std::string& str)
 			std::cout << "'" << static_cast<char>(nbr) << "'" << std::endl;
 		else
 			std::cout << "Non displayable" << std::endl;
+	}
 	std::cout << "int: ";
 	if (nbr < MIN_INT || nbr > MAX_INT)
 		std::cout << "impossible" << std::endl;
@@ -131,7 +132,7 @@ void	printDouble(std::string& str)
 	if (nbr < MIN_FLOAT || nbr > MAX_FLOAT)
 		std::cout << "impossible" << std::endl;
 	else
-		std::cout << static_cast<float>(nbr) << std::endl;
+		std::cout << static_cast<float>(nbr) << (tol ? ".0f" : "f") << std::endl;
 	std::cout << "double: ";
 	if (nbr < MIN_DOUBLE || nbr > MAX_DOUBLE)
 		std::cout << "impossible" << std::endl;

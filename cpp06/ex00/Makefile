@@ -6,11 +6,11 @@
 #    By: camurill <camurill@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/23 17:05:26 by camurill          #+#    #+#              #
-#    Updated: 2025/09/30 16:28:30 by camurill         ###   ########.fr        #
+#    Updated: 2025/10/20 13:51:56 by camurill         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Convert
+NAME = Converter
 
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -g
@@ -20,7 +20,8 @@ INC = inc/
 
 SRCS =	$(SRC)main.cpp\
 		$(SRC)ScalarConverter.cpp\
-		$(SRC)Which_type.cpp
+		$(SRC)Which_type.cpp\
+		$(SRC)Converter.cpp
 
 INCS =	$(INC)ScalarConverter.hpp
 
