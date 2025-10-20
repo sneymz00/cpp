@@ -6,18 +6,18 @@
 /*   By: camurill <camurill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 17:19:26 by camurill          #+#    #+#             */
-/*   Updated: 2025/10/03 17:26:10 by camurill         ###   ########.fr       */
+/*   Updated: 2025/10/20 18:09:10 by camurill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "whatever.hpp"
+#include "Whatever.hpp"
 
 int main( void ) 
 {
 	int a = 2;
 	int b = 3;
 	
-	::swap( a, b );
+	::swap(a,b);
 	std::cout << "a = " << a << ", b = " << b << std::endl;
 	std::cout << "min( a, b ) = " << ::min( a, b ) << std::endl;
 	std::cout << "max( a, b ) = " << ::max( a, b ) << std::endl;
