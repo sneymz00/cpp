@@ -5,19 +5,20 @@
 #                                                     +:+ +:+         +:+      #
 #    By: camurill <camurill@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/10/21 14:35:07 by nikitadorof       #+#    #+#              #
-#    Updated: 2025/10/24 19:15:30 by camurill         ###   ########.fr        #
+#    Created: 2025/10/24 17:52:13 by camurill          #+#    #+#              #
+#    Updated: 2025/10/24 17:52:35 by camurill         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = MutantStack
+NAME = RPN
 
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS =	main.cpp
+SRCS =	main.cpp\
+		RPN.cpp
 
-INCS =	MutantStack.hpp
+INCS =	RPN.hpp
 
 OBJS = $(SRCS:.cpp=.o)
 
