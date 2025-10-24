@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: nikitadorofeychik <nikitadorofeychik@st    +#+  +:+       +#+         #
+#    By: camurill <camurill@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/21 13:58:53 by nikitadorof       #+#    #+#              #
-#    Updated: 2025/10/21 13:58:53 by nikitadorof      ###   ########.fr        #
+#    Updated: 2025/10/24 17:12:01 by camurill         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,9 +15,10 @@ NAME = Span
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS =	main.cpp
+SRCS =	main.cpp\
+		Span.cpp
 
-INCS =	Whatever.hpp
+INCS =	Span.hpp
 
 OBJS = $(SRCS:.cpp=.o)
 

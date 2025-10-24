@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   easyfind.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nikitadorofeychik <nikitadorofeychik@st    +#+  +:+       +#+        */
+/*   By: camurill <camurill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 12:12:57 by nikitadorof       #+#    #+#             */
-/*   Updated: 2025/10/21 13:56:22 by nikitadorof      ###   ########.fr       */
+/*   Updated: 2025/10/24 16:56:28 by camurill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,13 @@ class NotFoundException : public std::exception
 };
 
 template<typename T>
-typename T::itearetor easyfind(T &container, int n)
+typename T::iterator easyfind(T &container, int n)
 {
 	typename T::iterator i;
 
-	i = std::find(container.begin(), constainer.end(), n);
+	i = std::find(container.begin(), container.end(), n);
 	if (i == container.end())
-		throw NotFoundException;
+		throw NotFoundException();
 	return (i);
 }
 #endif

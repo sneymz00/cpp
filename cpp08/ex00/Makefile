@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: nikitadorofeychik <nikitadorofeychik@st    +#+  +:+       +#+         #
+#    By: camurill <camurill@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/21 13:56:33 by nikitadorof       #+#    #+#              #
-#    Updated: 2025/10/21 13:56:33 by nikitadorof      ###   ########.fr        #
+#    Updated: 2025/10/24 16:54:53 by camurill         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 

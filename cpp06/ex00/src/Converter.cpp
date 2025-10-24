@@ -6,7 +6,7 @@
 /*   By: camurill <camurill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 16:30:48 by camurill          #+#    #+#             */
-/*   Updated: 2025/10/20 13:58:18 by camurill         ###   ########.fr       */
+/*   Updated: 2025/10/20 15:55:23 by camurill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,11 +101,12 @@ void	printFloat(const std::string& str)
 	else
 		std::cout << static_cast<int>(nbr) << std::endl;
 	std::cout << "float: ";
+	std::cout << nbr << " ";
 	if (nbr < MIN_FLOAT || nbr > MAX_FLOAT)
 		std::cout << "impossible" << std::endl;
 	else
 		std::cout << nbr << std::endl;
-	std::cout << "double" << static_cast<double>(nbr) << (tol ? ".0" : "") << std::endl;
+	std::cout << "double: " << static_cast<double>(nbr) << (tol ? ".0" : "") << std::endl;
 }
 
 void	printDouble(const std::string& str)

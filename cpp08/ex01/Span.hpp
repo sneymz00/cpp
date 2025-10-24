@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nikitadorofeychik <nikitadorofeychik@st    +#+  +:+       +#+        */
+/*   By: camurill <camurill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 13:59:20 by nikitadorof       #+#    #+#             */
-/*   Updated: 2025/10/21 14:12:45 by nikitadorof      ###   ########.fr       */
+/*   Updated: 2025/10/24 17:12:56 by camurill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <iostream>
 # include <vector>
 # include <exception>
+# include <algorithm>
 
 class Span
 {
@@ -25,6 +26,7 @@ class Span
 	public:
 			Span();
 			Span(unsigned int N);
+			Span(const Span &copy);
 			Span &operator=(const Span &copy);
 			~Span();
 

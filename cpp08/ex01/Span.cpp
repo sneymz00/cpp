@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Span.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nikitadorofeychik <nikitadorofeychik@st    +#+  +:+       +#+        */
+/*   By: camurill <camurill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 14:09:42 by nikitadorof       #+#    #+#             */
-/*   Updated: 2025/10/21 14:33:11 by nikitadorof      ###   ########.fr       */
+/*   Updated: 2025/10/24 17:13:16 by camurill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ Span &Span::operator=(const Span &copy)
 		_N = copy._N;
 		_v = copy._v;
 	}
+	return *this;
 }
 
 Span::~Span()
